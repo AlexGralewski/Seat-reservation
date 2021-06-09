@@ -3,31 +3,18 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 100vw;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-#root {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
+* {
+  text-align: center;
 }
 
-.starting-screen, .room-view-screen, .summary-screen {
+.starting-screen, .room-view-screen, .summary-screen, .refresh-alert {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,17 +28,13 @@ code {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100vw;
   min-height: 100vh;
-}
-
-.starting-screen {
-  width: 250px;
+  min-width: 100vw;
 }
 
 .starting-screen .container {
   margin: 20px 0;
-  width: 100%;
+  width: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,17 +53,15 @@ code {
 }
 
 .room-view-screen {
-  width: 820px;
+  padding: 30px;
+}
+
+.room-view-screen h2 {
+  width: 900px;
 }
 
 .room-view-screen .seats {
   position: relative;
-  width: 100%;
-  height: 550px;
-}
-
-.room-view-screen .legend {
-  width: 100%;
 }
 
 .room-view-screen button {
@@ -146,5 +127,13 @@ input:active {
 
 .selected {
   background-color: #ff7f16;
+}
+
+@media screen and (max-width: 900px) {
+  .room-view-screen {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 /*# sourceMappingURL=index.css.map */

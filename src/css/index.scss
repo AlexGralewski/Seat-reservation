@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 100vw;
 }
 
 code {
@@ -12,30 +13,24 @@ code {
     monospace;
 }
 
-#root {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+* {
+  text-align: center;
 }
 
 
-.starting-screen, .room-view-screen, .summary-screen {
+.starting-screen, .room-view-screen, .summary-screen, .refresh-alert {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   min-height: 100vh;
+  min-width: 100vw;
 }
 
 .starting-screen {
-  width: 250px;
   .container {
     margin: 20px 0;
-    width: 100%;
+    width: 250px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,15 +44,16 @@ code {
 }
 
 .room-view-screen {
-  width: 820px;
+  padding: 30px;
+
+  h2 {
+    width: 900px;
+  }
   .seats {
     position: relative;
-    width: 100%;
-    height:550px;
+
   }
-  .legend {
-    width: 100%;
-  }
+
   button {
     height: 50px;
     width: 200px;
@@ -102,4 +98,10 @@ input:active {
 }
 .selected {
   background-color: rgb(255, 127, 22);
+}
+
+@media screen and (max-width:900px) {
+  .room-view-screen {
+    align-items: flex-start;
+  }
 }
